@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "launch",
+  "description": "launch",
+  "version": "1.0.0",
+  "icons": {
+    "16": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "externally_connectable": {
+    "matches": ["*://*/*"]
+  },
+  "action": {
+    "default_title": "launch",
+    "default_icon": {
+      "16": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    },
+    "default_popup": "index.html"
+  },
+  "permissions": [],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "css": ["content-script.css"],
+      "js": ["content-script.js"],
+      "run_at": "document_start"
+    }
+  ]
+}
